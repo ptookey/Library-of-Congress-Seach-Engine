@@ -24,14 +24,14 @@
     </form>
 
     <script>
-      const form = document.querySelector('#search-form');
+      var form = document.querySelector('#search-form');
       form.addEventListener('submit', function(event) {
         event.preventDefault(); // prevent form from submitting normally
         
-        const searchQuery = document.querySelector('#search-query').value;
-        const searchFormat = document.querySelector('#search-format').value;
+        var searchQuery = document.querySelector('#search-query').value;
+        var searchFormat = document.querySelector('#search-format').value;
         
-        const searchUrl = 'https://www.loc.gov/' + searchFormat + '/?q=' + encodeURIComponent(searchQuery);
+        var searchUrl = 'https://www.loc.gov/' + searchFormat + '/?q=' + encodeURIComponent(searchQuery);
         window.location.replace(searchUrl);
       });
     </script>
