@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Library of Congress Search</title>
+  </head>
+  <body>
+    <h1>Library of Congress Search</h1>
+    <form id="search-form">
+      <label for="search-query">Search Query:</label>
+      <input type="text" id="search-query" name="q"><br>
+      
+      <label for="search-format">Search Format:</label>
+      <select id="search-format" name="format">
+        <option value="all">All</option>
+        <option value="atom">ATOM</option>
+        <option value="dc">Dublin Core</option>
+        <option value="mods">MODS</option>
+        <option value="openSearch">OpenSearch</option>
+        <option value="rss">RSS</option>
+      </select><br>
+      
+      <input type="submit" value="Search">
+    </form>
+
+    <script>
+      const form = document.querySelector('#search-form');
+      form.addEventListener('submit', function(event) {
+        event.preventDefault(); // prevent form from submitting normally
+        
+        const searchQuery = document.querySelector('#search-query').value;
+        const searchFormat = document.querySelector('#search-format').value;
+        
+        const searchUrl = 'https://www.loc.gov/' + searchFormat + '/?q=' + encodeURIComponent(searchQuery);
+        window.location.replace(searchUrl);
+      });
+    </script>
+  </body>
+</html>
