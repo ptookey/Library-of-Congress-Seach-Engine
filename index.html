@@ -6,23 +6,25 @@
   <title>Library of Congress Search</title>
   <link rel="stylesheet" href="./style.css">
 </head>
-
 <body>
   <div class="container">
     <h1>Library of Congress Search</h1>
-    <form id="search-form">
-      <label for="search-query">Search Query:</label>
-      <input type="text" id="search-query" name="q"><br>
-      <label for="search-format">Search Format:</label>
-      <select id="search-format" name="format">
-        <option value="all">All</option>
-        <option value="atom">ATOM</option>
-        <option value="dc">Dublin Core</option>
-        <option value="mods">MODS</option>
-        <option value="openSearch">OpenSearch</option>
-        <option value="rss">RSS</option>
-      </select><br>
-      <input type="submit" value="Search">
+  <form id="search-form">
+    <label for="search-query">Search Query:</label>
+    <input type="text" id="search-query" name="q"><br>
+    
+    <label for="search-format">Search Format:</label>
+    <select id="search-format" name="format">
+      <option value="all">All</option>
+      <option value="atom">ATOM</option>
+      <option value="dc">Dublin Core</option>
+      <option value="mods">MODS</option>
+      <option value="openSearch">OpenSearch</option>
+      <option value="rss">RSS</option>
+    </select><br>
+    
+    <input type="submit" value="Search">
+  </form> 
   </div>
   <script>
     var form = document.querySelector('#search-form');
