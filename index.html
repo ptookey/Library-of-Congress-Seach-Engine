@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Library of Congress Search</title>
-    <link rel="stylesheet" href="./style.css">
-  </head>
-  <body>
+
+<head>
+  <meta charset="utf-8">
+  <title>Library of Congress Search</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+  <div class="container">
     <h1>Library of Congress Search</h1>
     <form id="search-form">
       <label for="search-query">Search Query:</label>
       <input type="text" id="search-query" name="q"><br>
-      
       <label for="search-format">Search Format:</label>
       <select id="search-format" name="format">
         <option value="all">All</option>
@@ -20,21 +22,20 @@
         <option value="openSearch">OpenSearch</option>
         <option value="rss">RSS</option>
       </select><br>
-      
       <input type="submit" value="Search">
-    </form>
+  </div>
+  <script>
+    var form = document.querySelector('#search-form');
+    form.addEventListener('submit', function (event) {
+      event.preventDefault(); // prevent form from submitting normally
 
-    <script>
-      var form = document.querySelector('#search-form');
-      form.addEventListener('submit', function(event) {
-        event.preventDefault(); // prevent form from submitting normally
-        
-        var searchQuery = document.querySelector('#search-query').value;
-        var searchFormat = document.querySelector('#search-format').value;
-        
-        var searchUrl = 'https://www.loc.gov/' + searchFormat + '/?q=' + encodeURIComponent(searchQuery);
-        window.location.replace(searchUrl);
-      });
-    </script>
-  </body>
+      var searchQuery = document.querySelector('#search-query').value;
+      var searchFormat = document.querySelector('#search-format').value;
+
+      var searchUrl = 'https://www.loc.gov/' + searchFormat + '/?q=' + encodeURIComponent(searchQuery);
+      window.location.replace(searchUrl);
+    });
+  </script>
+</body>
+
 </html>
